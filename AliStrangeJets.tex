@@ -1,0 +1,47 @@
+\makeatletter
+\def\input@path{{etc/}{body/}}
+\makeatother
+
+\documentclass[ALICE,manyauthors]{cernphprep}
+\usepackage{ALICE_CDS_cernphprep}
+
+\begin{document}
+
+\begin{titlepage}
+\PHyear{2020}
+\PHnumber{XXX}
+\PHdate{October 2,}
+
+\title{Production of \kzero, \lmb (\almb), \Xis and \Oms in jets and underlying events in \pp and \pPb collisions with ALICE}
+\ShortTitle{Production of (multi-)strange particles in jets and UE in \pp and \pPb}
+
+\Collaboration{ALICE Collaboration\thanks{See Appendix~\ref{app:collab} for the list of collaboration members}}
+\ShortAuthor{ALICE Collaboration}
+
+\input{c00Abstract}
+\end{titlepage}
+
+\setcounter{page}{2}
+\input{c01Introduction}
+\input{c02Detector}
+\input{c03Analysis}
+\input{c04Results}
+\input{c05Summary}
+
+\newenvironment{acknowledgement}{\relax}{\relax}
+\begin{acknowledgement}
+\section*{Acknowledgements}
+%\input{acknowledgements.tex}
+\end{acknowledgement}
+
+\bibliographystyle{etc/utphys}
+\bibliography{AliStrangeJets}
+
+\newpage
+\appendix
+%\input{} % put your appendices here (if any)
+
+\section{The ALICE Collaboration}
+\label{app:collab}
+%\input{authorlist-preprint.tex}  
+\end{document}
