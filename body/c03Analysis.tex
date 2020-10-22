@@ -39,13 +39,15 @@ It can be shown that an exclusion of first two $\kT$ jets from Eq.~(\ref{eq:RhoC
 \label{sec:ParRec}
 
 The strange particles \kzero, \lmb, \almb, \Xis and \Oms are reconstructed at mid-rapidity ($\abs{\eta} < 0.75$) with their specific weak decay topology.
-The following decay channels are studied~\cite{PhysRevD.98.030001}
-%\begin{aligned}
-%\kzero       $\to \pip + \pim$                & B.R. $ = (69.20  \pm 0.05)  \%$  \\
-%\lmb (\almb) $\to p(\pbar) + \pim (\pip)$     & B.R. $ = (63.9   \pm 0.5)   \%$ \\
-%\X (\Ix)     $\to \lmb (\almb) + \pim (\pip)$ & B.R. $ = (99.887 \pm 0.035) \%$ \\
-%\Om (\Mo)    $\to \lmb (\almb) + \kam (\kap)$ & B.R. $ = (67.8   \pm 0.7)   \%$ \\
-%\end{aligned}
+The following decay channels are studied~\cite{PhysRevD.98.030001}.
+$$
+\begin{aligned}
+\kzero       & \to \pip + \pim                & B.R. & = (69.20  \pm 0.05)  \%  \\
+\lmb (\almb) & \to p(\pbar) + \pim (\pip)     & B.R. & = (63.9   \pm 0.5)   \% \\
+\X (\Ix)     & \to \lmb (\almb) + \pim (\pip) & B.R. & = (99.887 \pm 0.035) \% \\
+\Om (\Mo)    & \to \lmb (\almb) + \kam (\kap) & B.R. & = (67.8   \pm 0.7)   \% \\
+\end{aligned}
+$$
 The proton, pion and Kaon tracks (daughter tracks) are identified in the TPC via their measured energy deposition~\cite{Abelev:2014ffa}.
 The identification methods for the \Vzero (\kzero and \lmb (\almb) which decay into two oppositely charged daughter particles) and cascade (\Xis and \Oms which decay into a charged meson (bachelor) plus a \Vzero decaying particle, giving the two-step process) candidates follow those presented in earlier ALICE publications~\cite{Aamodt:2011zza, Abelev:2012jp, Acharya:2018orn, Abelev:2013haa, Acharya:2020uxl, Acharya:2019kyh}.
 In addition, in order to remove the contribution from pileup collisions outside the trigger proton bunch (out-of-bunch pileup), it is requested that at least one of the tracks from the decay products of the (multi-)strange hadron under study is matched in either the ITS or TOF detector.
@@ -167,7 +169,7 @@ where the $\mathcal{P}$ denotes the probability of particles in a given selectio
 
 \subsection{Corrections for strange particles reconstruction and feed-down}
 \label{SubSec:Correction}
-The reconstruction efficiency of particles are obtained in Monte Carlo simulated data. These are estimated using PYTHIA 8.2~\cite{Sjostrand:2014zea} and DPMJet~\cite{Roesler:2000he} generators in \pp and \pPb, respectively, and tracsported through a GEANT 3~\cite{Brun:1994aa}\emp{Where we can find the GEANT version?}. Due to different $\eta$-shape between particle in JC and the inclusive one, it is needed to take the $\eta$ dependence of different particle distributions into account~\cite{V0injet}. Fig.~\ref{fig:EffiJCIncl} shows the difference of reconstruction efficiency of JC particles and the inclusive one. 
+The reconstruction efficiency of particles are obtained in Monte Carlo simulated data. These are estimated using PYTHIA 8.2~\cite{Sjostrand:2014zea} and DPMJet~\cite{Roesler:2000he} generators in \pp and \pPb, respectively, and tracsported through a GEANT 3~\cite{Brun:1994aa}. Due to different $\eta$-shape between particle in JC and the inclusive one, it is needed to take the $\eta$ dependence of different particle distributions into account~\cite{V0injet}. Fig.~\ref{fig:EffiJCIncl} shows the difference of reconstruction efficiency of JC particles and the inclusive one. 
 \begin{figure}[!ht]
 	\begin{center}
 		\includegraphics[width=.4\textwidth]{cf02_1}
@@ -315,5 +317,23 @@ Jet $\pT$ threshold\\
 	\end{center}
 \end{table}
 
-The uncertainty of jet cone particle ratios ($\lmb/\kzero$, $\Xi/\kzero$, $\Omega/\kzero$, $\Xi/\lmb$, $\Omega/\lmb$ and $\Omega/\Xi$) also consider three sources: the particle reconstruction, UE subtraction and the jet $\pT$ threshold. The particle reconstruction are propagated from the spectra. The uncertainty related to UE subtraction and jet $\pT$ threshold are obtained by varying the condition in both numerator and denominator of the corresponding ratios. \emp{update uncertainty values later}
-
+The uncertainty of jet cone particle ratios ($\lmb/\kzero$, $\Xi/\kzero$, $\Omega/\kzero$, $\Xi/\lmb$, $\Omega/\lmb$ and $\Omega/\Xi$) also consider three sources: the particle reconstruction, UE subtraction and the jet $\pT$ threshold. The particle reconstruction uncertainty is propagated from the spectra. Uncertainties related to UE subtraction and jet $\pT$ threshold are obtained by varying the condition in both numerator and denominator of the corresponding ratios. \emp{update uncertainty values later}
+%\begin{table}[!ht]
+%	\begin{center}
+%		\caption{Main sources and values of the relative systematic uncertainties(\%) of $\lmb/\kzero$, $\Xi/\kzero$, $\Omega/\kzero$, $\Xi/\lmb$, $\Omega/\lmb$ and $\Omega/\Xi$ in JE in \pp collisions at \thirteen.
+%			The value are reported for low, intermediate and high $\pT$.}
+%		\label{tab:ppRatioUncer}
+%		\begin{tabularx}{\textwidth}{@{} lCCCCCC @{}}
+%			\toprule
+%			\textbf{Uncertainty source} & \textbf{$\frac{\lmb + \almb}{2\kzero}$} & \textbf{$\frac{\X + \Ix}{2\kzero}$} & \textbf{$\frac{\Om + \Mo}{2\kzero}$} & \textbf{$\frac{\X + \Ix}{\lmb + \almb}$} & \textbf{$\frac{\Om + \Mo}{\lmb + \almb}$} & \textbf{$\frac{\Om + \Mo}{\X + \Ix}$}\\
+%			$\pT$ (\GeVc) & [0.6 -2 -10]   & [0.6 -2 -10] & [0.6 -2 -10] & [0.6 -2 -10]  & [0.6 -2 -10] & [0.6 -2 -10]\\
+%			\midrule
+%			Particle reconstruction\\
+%			UE subtraction\\
+%			Jet $\pT$ threshold\\
+%			\midrule
+%			\textbf{Total uncertainty} \\
+%			\bottomrule
+%		\end{tabularx}
+%	\end{center}
+%\end{table}
