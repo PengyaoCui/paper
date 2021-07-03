@@ -110,7 +110,7 @@ After event selection, the \pp sample consists of $1.5$ billion events.
 The integrated luminosity of $\lumi_{\rm int} = 9.38\pm 0.47$~nb$^{-1}$ based on the visible cross section observed by the V0 trigger was extracted from a van der Meer scan~\cite{ALICE-PUBLIC-2016-002}.
 About $500$ million events from the \pPb samples were selected, which correspond to an integrated luminosity of \emp{$\lumi_{\rm int} = 287 \pm 10.619 $~$\mu{\rm b}^{-1}$}~\cite{collaboration_2014}.
 The \pPb events were divided into three multiplicity classes based on the total charge deposited in the V0A (the Pb-going direction).
-The multiplicity intervals and their corresponding mean charged-particle density (\dndeta) measured at midrapidity ($\abs{\eta} < 0.5$) are given in Ref.~\cite{Adam:2015pza}. 
+The multiplicity intervals and their corresponding mean charged-particle density (\dndeta) measured at mid-rapidity ($\abs{\eta} < 0.5$) are given in Ref.~\cite{Adam:2015pza}. 
 
 \section{Analysis}%
 \label{sec:Analysis}
@@ -127,8 +127,8 @@ This condition ensures the jet cone is fully overlapping with the acceptances of
 To tag the hard scattering, a cut on charged-particle jet $\pT$ ($\pTj^{\rm ch}$) is applied as $\pTj^{\rm ch} > 10$~\GeVc~\cite{Acharya:2021oaa}.
 
 
-\emp{Besides the hard parton-parton interactions in the collisions, there is also the soft contribution summarizing everything that did not correlate with the hard collisions(reformulated).}
-The background density~($\rhobkg$) determined from the $\kT$ algorithm in \pp collisions is around $1$~\GeVc~rad$^{-1}$ and is not subtracted.
+Besides the hard parton-parton interactions in the collisions, there is also the soft contribution which did not correlate with the hard collisions.
+The background density~($\rhobkg$) determined from the $\kT$ algorithm~\cite{Catani:1993hr, Ellis:1993tq} in \pp collisions is around $1$~\GeVc~rad$^{-1}$ and is not subtracted.
 In \pPb collisions, the underlying background is larger and the reconstructed jet is therefore further corrected for contributions form the underlying event to the jet momentum as
 \begin{equation}
 \pTj = \pTjch - \rhobkg\cdot\Ajet
@@ -205,18 +205,30 @@ To estimate the contribution from JE the $\pT$-differential particle density (d$
 \begin{equation}
 \begin{split}
 {\rm Inclusive:}\qquad & \frac{\dd\rho}{\dd\pT} = \frac{1}{N_{\rm ev}}\times\frac{1}{\Delta\eta\Delta\varphi}\times\frac{\dd N}{\dd\pT}, \\
-{\rm JC:}\qquad & \frac{\dd\rho}{\dd\pT} = \frac{1}{N_{\rm ev}^{\rm jet}} \times\frac{1}{\mathcal{P}_{\rm JC}\Delta\eta\Delta\varphi}\times\frac{\dd N}{\dd\pT}, \\
-{\rm PC:}\qquad & \frac{\dd\rho}{\dd\pT} = \frac{1}{N_{\rm ev}^{\rm jet}} \times\frac{1}{\mathcal{P}_{\rm PC}\Delta\eta\Delta\varphi}\times\frac{\dd N}{\dd\pT}. \\
+{\rm JC:}\qquad & \frac{\dd\rho}{\dd\pT} = \frac{1}{N_{\rm ev}^{\rm jet}} \times\frac{1}{A_{\rm jet}}\times\frac{\dd N}{\dd\pT}, \\
+{\rm PC:}\qquad & \frac{\dd\rho}{\dd\pT} = \frac{1}{N_{\rm ev}^{\rm jet}} \times\frac{1}{A_{\rm PC}}\times\frac{\dd N}{\dd\pT}. \\
 \end{split}
 \label{eq:normalize}
 \end{equation}
-\emp{where the $\mathcal{P}$ denotes the probability of particles in a given selection found in the $\eta$--$\varphi$ plane with respect to the inclusive one.}
+%\begin{equation}
+%\begin{split}
+%{\rm Inclusive:}\qquad & \frac{\dd\rho}{\dd\pT} = \frac{1}{N_{\rm ev}}\times\frac{1}{\Delta\eta\Delta\varphi}\times\frac{\dd N}{\dd\pT}, \\
+%{\rm JC:}\qquad & \frac{\dd\rho}{\dd\pT} = \frac{1}{N_{\rm ev}^{\rm jet}} \times\frac{1}{\mathcal{P}_{\rm JC}\Delta\eta\Delta\varphi}\times\frac{\dd N}{\dd\pT}, \\
+%{\rm PC:}\qquad & \frac{\dd\rho}{\dd\pT} = \frac{1}{N_{\rm ev}^{\rm jet}} \times\frac{1}{\mathcal{P}_{\rm PC}\Delta\eta\Delta\varphi}\times\frac{\dd N}{\dd\pT}. \\
+%\end{split}
+%\label{eq:normalize}
+%\end{equation}
+where the $\Delta\eta\Delta\varphi$ is the acceptance in pseudo-rapidity and azimuthal angle, the $A_\mathrm{jet}$ is the jet area, and the $A_\mathrm{PC}$ is the perpendicular cone area.
+The density of particles within jet (JE) can be defined as:
+\begin{equation}
+	{\rm JE = JC - PC}
+\end{equation}
 
 \subsection{Corrections for strange particles reconstruction and feed-down}
 \label{SubSec:Correction}
 The reconstruction efficiency of each particle is obtained from Monte Carlo simulated data.
 For this purpose PYTHIA 8.2~\cite{Sjostrand:2014zea} and DPMJet~\cite{Roesler:2000he} in \pp and \pPb collisions are used and the simulated data are propagated through the detector by GEANT 3~\cite{Brun:1994aa} to simulate ALICE detector response.
-\emp{Due to different $\eta$-shape between particle yield in JC and the inclusive one, it is needed to take the $\eta$ dependence of different particle distributions into account~\cite{Acharya:2021oaa}.}
+Due to differences in the experimental acceptance for particles associated with jets and underlying event, the efficiencies of particles are estimated separately for every case~\cite{Acharya:2021oaa}.
 Fig.~\ref{fig:EffiJCIncl} shows the difference of reconstruction efficiency of JC particle yields and the inclusive one.
 \begin{figure}[!ht]
 	\begin{center}
@@ -306,7 +318,7 @@ All these individual error contributions, which are listed in Tab.~\ref{tab:ppIn
 This value corresponds to the uncertainty on the determination of the material budget by measuring photon conversions~\emp{cite}.
 This particular systematic uncertainty is around $4\%$.
 
-\emp{\textbf{Track selection.} To estimate the systematic uncertainty due to the track selection, the analysis has been redone with an increased number of required clusters in the TPC.}
+\textbf{Track selection.} To estimate the systematic uncertainty due to the track selection, the analysis has been redone with an increased number of required clusters in the TPC from default 70 points to 80 points.
 
 \textbf{Particle identification.} The TPC $\dEdx$ selection is used to reduce the combinatorial background in the (multi-)strange particle invariant mass distribution.
 The number of Gaussian $\sigma$ in the identification of particles using the $\dEdx$ has been varied from $4\sigma$ to $6\sigma$.
@@ -318,6 +330,7 @@ The selection on the $mLc/p$ is varied within $12$ to $40$~cm for $\kzero$, $20$
 The observed deviations for each component are summed in quadrature.
 
 \textbf{Signal extraction.} In the same spirit, the signal extraction technique has been tested by varying the widths used to define the ``signal" and ``background'' regions, expressed in terms of the number of $\sigma$ as defined in Sec.~\ref{sec:ParRec}.
+In particular the width of the peak region has been varied from the standard $6\sigma$ to $7\sigma$, $5\sigma$ and $4\sigma$ for \Vzero particles and  $3\sigma$ to $4\sigma~(3.5\sigma)$ and $2.5\sigma$ for $\Xi(\Omega)$.
 
 The additional systematic uncertainty sources associated with particle yield in the jet originate from the UE subtraction estimator and the jet $\pT$ threshold.
 The systematic uncertainty due to the UE subtraction is estimated by varying the perpendicular cone radius from the chosen thresholds of 0.4~(PC04) to 0.2~(PC02) and 0.6~(PC06).
