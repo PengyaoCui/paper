@@ -108,7 +108,7 @@ In addition, the coordinate of the primary vertex along the beam direction is wi
 After event selection, the \pp sample consists of $1.5$ billion events.
 The average number of inelastic interactions per bunch crossing ranges between $2\%$ and $14\%$.
 The integrated luminosity of $\lumi_{\rm int} = 9.38\pm 0.47$~nb$^{-1}$ based on the visible cross section observed by the V0 trigger was extracted from a van der Meer scan~\cite{ALICE-PUBLIC-2016-002}.
-About $500$ million events from the \pPb samples were selected, which correspond to an integrated luminosity of $\lumi_{\rm int} = 295 \pm 11 $~$\mu{\rm b}^{-1}$~\cite{ALICE:2019oyn}.
+About $500$ million events from the \pPb samples were selected, which correspond to an integrated luminosity of \emp{$\lumi_{\rm int} = 287 \pm 10.619 $~$\mu{\rm b}^{-1}$}~\cite{collaboration_2014}.
 The \pPb events were divided into three multiplicity classes based on the total charge deposited in the V0A (the Pb-going direction).
 The multiplicity intervals and their corresponding mean charged-particle density (\dndeta) measured at mid-rapidity ($\abs{\eta} < 0.5$) are given in Ref.~\cite{Adam:2015pza}. 
 
@@ -138,15 +138,15 @@ where the $\pTj^{\rm rec}$ is the reconstructed jet $\pT$, $\Ajet$ is the jet ar
 The $\Ajet$ is calculated using the FastJet algorithm with a ghost area $0.005$~\cite{Cacciari:2008gn}.
 A method that is suitable for combinatorial jet background density estimation for sparse systems circumvents the problems arising from using the ghost jets is introduced in \cite{Chatrchyan:2012tt}.
 The basic idea is to neglect the ghosts and instead account for the empty areas by introducing a factor correcting the background density for it.
-It can be implemented by the following formula
+\emp{It can be implemented by the following formula}
 \begin{equation}
-\rhobkg = C\cdot{\rm median}\{\frac{p_{\rm T,i}}{A_{i}}\} ~ {\rm with}~ C = \frac{\sum_{j}A_{j}}{A_{\rm acc}}.
+\rhobkg = C\cdot{\rm median}\{\frac{p_{\rm T,i}}{A_{i}}\},~{\rm with}~C = \frac{\sum_{j} A_{j}}{A_\mathrm{acc}}
 \label{eq:RhoCMS}
 \end{equation}
-Where $A_{j}$ is the area of each $\kT$ jet with at least one real track, i.e. excluding ghosts and $A_{\rm acc}$ is the area of the charged-particle acceptance, namely $(2 \times 0.8) \times 2\pi$.
+Technically, the occupancy correction factor $C$ is calculated as the ratio of $\kT$ jet clusters built by pure ghosts over all $\kT$ jet clusters.
 This method has the advantage that it uses the median and takes empty areas into account.
 This method can be further refined for the specific case of \pPb collisions.
-It can be shown that the exclusion of the two $\kT$ jets with highest $\pT$ from Eq.~(\ref{eq:RhoCMS}) is enhancing the background quality~\cite{ALICE:2015umm, ALICE:2016faw}.
+It can be shown that the exclusion of the first two $\kT$ jets from Eq.~(\ref{eq:RhoCMS}) is enhancing the background quality.
 
 \subsection{Strange particles reconstruction}%
 \label{sec:ParRec}
@@ -315,8 +315,8 @@ All these individual error contributions, which are listed in Tab.~\ref{tab:ppIn
 \end{table}
 
 \textbf{Material budget.} The effect of the incomplete knowledge of the detector's material budget is evaluated by comparing different Monte Carlo simulations in which the material budget was increased and decreased by $4.5\%$.
-This value corresponds to the uncertainty on the determination of the material budget by measuring photon conversions~\cite{Abelev:2014ffa}.
-This particular systematic uncertainty is around $4\%$~\cite{Acharya:2020uxl}.
+This value corresponds to the uncertainty on the determination of the material budget by measuring photon conversions~\emp{cite}.
+This particular systematic uncertainty is around $4\%$.
 
 \textbf{Track selection.} To estimate the systematic uncertainty due to the track selection, the analysis has been redone with an increased number of required clusters in the TPC from default 70 points to 80 points.
 
