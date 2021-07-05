@@ -58,13 +58,13 @@ To better understand particle production mechanisms in small systems, the charge
 It can help us to disentangle the soft and hard scattering contributions of baryon-to-meson or strange to non-strange enhancement in small systems. }
 
 %These measurements can be used to constrain parton distributions functions
-\emp{The baryon-to-meson ratios are sensitive to quark and gluon jet production in heavy-ion collisions.}
+%The baryon-to-meson ratios are sensitive to quark and gluon jet production in heavy-ion collisions.
 
 In this paper, the production of \kzero, \lmb (\almb), \Xis and \Oms in charged-particle jets and underlying event in \pp collisions at \thirteen and \pPb collisions at \fivenn is reported.
 Strange particles are reconstructed in the pseudo-rapidity range $|\eta| < 0.75$.
 Jets are reconstructed in the transverse momentum range $\pTjch > 10$~\GeVc and in the pseudo-rapidity range $|\eta| < 0.35$.
 The (multi-)strange particles associated with the jet are defined as a function of distance between particle momentum and jet axis in $\eta-\varphi$ plane.
-The results presented in this paper significantly improve the precision \emp{mention on which quantities} compared to ALICE previous measurements~\cite{Acharya:2021oaa}, including also the centrality dependence and extending to the multi-strange sector in both pp (at different energy) and p–Pb collisions.
+The results presented in this paper significantly improve the precision of the $\pT$-differential measurements  compared to ALICE previous one~\cite{Acharya:2021oaa}, including also the centrality dependence and extending to the multi-strange sector in both pp (at different energy) and p–Pb collisions.
 The baryon-to-meson and baryon-to-baryon ratios in energetic jets are compared with the case of particles not associated with jets and PYTHIA~8~\cite{Sjostrand:2014zea} simulation.
 
 The paper is structured as follows.
@@ -97,7 +97,8 @@ Outside of the TPC and located at a radius of approximately $4$~m, the TOF measu
 The TOF is a cylindrical array of multi-gap resistive plate chambers with an intrinsic time resolution of $50$~ps.
 It covers the pseudo-rapidity range $\abs{\eta} < 0.9$ with full azimuthal acceptance.
 It can provide particle identification over a broad range at intermediate transverse momenta ($0.5 \lesssim \pT \lesssim 2.7$~\GeVc).
-The total time-of-flight resolution, including the collision time resolution, is about $90$~ps in \pp collisions and approximately \emp{80~ps in \pPb collisions}.
+
+The total time-of-flight resolution, including the collision time resolution, is about $90$~ps in \pp and \pPb collisions~\cite{Acharya:2020uxl, Jacazio:2018slq} \emp{(p--Pb 2013 120~ps due to a worse collision-time resolution~\cite{ALICE:2016ovj})}.
 
 Data of \pp collisions at \thirteen and of \pPb collisions at \fivenn are used in this analysis.
 The \pp data sample was recorded in $2016$--$2017$, the \pPb sample in 2016 with ALICE detector, respectively.
@@ -135,7 +136,7 @@ In \pPb collisions, the underlying background is larger and the reconstructed je
 \label{eq:DeltaPt}
 \end{equation}
 where the $\pTj^{\rm rec}$ is the reconstructed jet $\pT$, $\Ajet$ is the jet area and $\rhobkg$ is the event-by-event background density~\cite{Cacciari:2007fd}.
-The $\Ajet$ is calculated using the FastJet algorithm with a ghost area $0.005$~\cite{Cacciari:2008gn}.
+The $\Ajet$ is calculated using the FastJet algorithm with a ghost area of $0.005$~\cite{Cacciari:2008gn}.
 A method that is suitable for combinatorial jet background density estimation for sparse systems circumvents the problems arising from using the ghost jets is introduced in \cite{Chatrchyan:2012tt}.
 The basic idea is to neglect the ghosts and instead account for the empty areas by introducing a factor correcting the background density for it.
 It can be implemented by the following formula
@@ -156,14 +157,14 @@ The following decay channels are studied~\cite{PhysRevD.98.030001}:
 $$
 \begin{aligned}
 \kzero      & \to \pip + \pim               & B.R. & = (69.20 \pm 0.05) \%, \\
-\lmb (\almb) & \to p(\pbar) + \pim (\pip)    & B.R. & = (63.9  \pm 0.5)  \%, \\
+\lmb (\almb) & \to \mathrm{p}(\pbar) + \pim (\pip)    & B.R. & = (63.9  \pm 0.5)  \%, \\
 \X (\Ix)    & \to \lmb (\almb) + \pim (\pip) & B.R. & = (99.887 \pm 0.035) \%, \\
 \Om (\Mo)   & \to \lmb (\almb) + \kam (\kap) & B.R. & = (67.8  \pm 0.7)  \%. \\
 \end{aligned}
 $$
 The proton, pion, and kaon tracks (daughter tracks) are identified in the TPC via their measured energy deposition~\cite{Abelev:2014ffa}.
 The identification of the \Vzero (\kzero and \lmb (\almb) which decay into two oppositely charged daughter particles) and cascade (\Xis and \Oms which decay into a bachelor charged meson plus a \Vzero decaying particle, giving the cascade decay topology) candidates follow those presented in earlier ALICE publications~\cite{Aamodt:2011zza, Abelev:2012jp, Acharya:2018orn, Abelev:2013haa, Acharya:2020uxl, Acharya:2019kyh}.
-In addition, to remove the contribution from pileup collisions outside the trigger proton bunch (out-of-bunch pileup), it is requested that at least one of the tracks from the decay products of the (multi-)strange hadron under study is \emp{matched in either the ITS or TOF detector.}
+In addition, removal of contributions from pileup collisions outside the trigger proton bunch (``out-of-bunch pileup''), it is achieved by requiring  that at least one of the charged decay track matches a hit in a ``fast'' detector (either the ITS or the TOF detector).
 The selections used in this paper are summarized in Tab.~\ref{tab:V0Cut}, \ref{tab:CascadeCut}.
 
 The signal extraction is performed as a function of $\pT$.
