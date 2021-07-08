@@ -96,8 +96,7 @@ Outside of the TPC and located at a radius of approximately $4$~m, the TOF measu
 The TOF is a cylindrical array of multi-gap resistive plate chambers with an intrinsic time resolution of $50$~ps.
 It covers the pseudo-rapidity range $\abs{\eta} < 0.9$ with full azimuthal acceptance.
 It can provide particle identification over a broad range at intermediate transverse momenta ($0.5 \lesssim \pT \lesssim 2.7$~\GeVc).
-
-The total time-of-flight resolution, including the collision time resolution, is about $90$~ps in \pp and \pPb collisions~\cite{Acharya:2020uxl, Jacazio:2018slq} \emp{(p--Pb 2013 120~ps due to a worse collision-time resolution~\cite{ALICE:2016ovj})}.
+The total time-of-flight resolution, including the collision time resolution, is about $90$~ps in \pp and \pPb collisions~\cite{Acharya:2020uxl, Jacazio:2018slq}.
 
 Data of \pp collisions at \thirteen and of \pPb collisions at \fivenn are used in this analysis.
 The \pp data sample was recorded in $2016$--$2017$, the \pPb sample in 2016 with ALICE detector, respectively.
@@ -124,7 +123,7 @@ Charged particles, which are used as input for jet reconstruction, are reconstru
 The charged particle tracks are selected in $\abs{\eta_{\rm trk}} < 0.9$ ($\TPC$ acceptance) and $\pT> 0.15$~\GeVc.
 The jet resolution parameter is $R = 0.4$ and the reconstructed jet clusters are selected in $\abs{\eta_{\rm jet}} < 0.35$.
 This condition ensures the jet cone is fully overlapping with the acceptances of both charged-particle tracks and the strange particles ($|\eta| < 0.75$).
-To tag the hard scattering, a cut on charged-particle jet $\pT$ ($\pTj^{\rm ch}$) is applied as $\pTj^{\rm ch} > 10$~\GeVc~\cite{Acharya:2021oaa}.
+A $\pTj^{\rm ch} > 10$~\GeVc cut on charged-particle jet transverse momentum, according to ALICE previous study~\cite{Acharya:2021oaa} is applied, to tag the hard scattering process.
 
 
 Besides the hard parton-parton interactions in the collisions, there is also the soft contribution which did not correlate with the hard collisions.
@@ -170,7 +169,7 @@ The signal extraction is performed as a function of $\pT$.
 In each $\pT$ interval, an invariant mass histogram is produced and filled with the corresponding counts.
 Then a Gaussian function is used to fit the peak, and a linear function is used to fit the combinatorial background.
 This allows for the extraction of the mean ($\mu$) and width ($\sigma$) of the peak.
-A ``peak'' region is defined within $\pm 6\sigma$ for $\Vzeros$ and $\pm 3\sigma$ ($\pm 4\sigma$) for cascades in \pp (and \pPb) with respect to $\mu$ for each $\pT$ bin.
+A ``peak'' region is defined within $\pm 6\sigma$ for \Vzeros and $\pm 3\sigma$ ($\pm 4\sigma$) for cascades in \pp (and \pPb) with respect to $\mu$ for each $\pT$ bin.
 The ``background'' regions are defined on both sides of the peak region.
 The $\pT$-differential yields of (multi-)strange particles are obtained by subtraction the integral of the background fit function in the peak region from the total bin counting in the same region.
 Examples of the invariant mass peaks for all particles are shown in Fig.~\ref{fig:InvM}.
@@ -218,10 +217,11 @@ To estimate the contribution from JE the $\pT$-differential particle density (d$
 %\end{split}
 %\label{eq:normalize}
 %\end{equation}
-where the $\Delta\eta\Delta\varphi$ is the acceptance in pseudo-rapidity and azimuthal angle, the $A_\mathrm{jet}$ is the jet area, and the $A_\mathrm{PC}$ is the perpendicular cone area.
+Where the $\Delta\eta\Delta\varphi$ is the acceptance in pseudo-rapidity and azimuthal angle, the $A_\mathrm{jet}$ is the jet area, and the $A_\mathrm{PC}$ is the perpendicular cone area.
 The density of particles within jet (JE) can be defined as:
 \begin{equation}
-	{\rm JE = JC - PC}
+\label{eq:je}
+	{\rm JE = JC - PC}.
 \end{equation}
 
 \subsection{Corrections for strange particles reconstruction and feed-down}
@@ -326,7 +326,7 @@ The number of Gaussian $\sigma$ in the identification of particles using the $\d
 \textbf{Proper lifetime selection.} The proper lifetime is defined as $mLc/p$, where $m$ is the mass of the particles, $L$ is the decay length, and $p$ is the particle's momentum.
 The selection on the $mLc/p$ is varied within $12$ to $40$~cm for $\kzero$, $20$ to $40$ cm for $\lmb$ $(\almb)$, $10$ to $30$ cm for $\Xis$, and $5$ to $15$ cm $\Oms$.
 
-\emp{\textbf{Topological selection.} The values of the selection criteria for the topological variables are varied around their nominal values.}
+\textbf{Topological selection.} The values of the selection criteria for the topological variables are varied within ranges leading to a maximum variation of $\pm 10\%$ in the raw singal yied around their nominal values.
 The observed deviations for each component are summed in quadrature.
 
 \textbf{Signal extraction.} In the same spirit, the signal extraction technique has been tested by varying the widths used to define the ``signal" and ``background'' regions, expressed in terms of the number of $\sigma$ as defined in Sec.~\ref{sec:ParRec}.
@@ -492,44 +492,57 @@ For the strange hadrons discussed in this paper, the ratios of yields for partic
 Therefore, all the $\pT$-differential densities are reported after summing over particle and anti-particles.
 The different selections shown below have been introduced in Sec.~\ref{sec:ParJetMatch}, in which also normalization method has been introduced.
 
-The $\pT$-differential densities ($\dd \rho/ \dd \pT$ defined by Eq.~\ref{eq:normalize}), for all particle species, in \pp and MB \pPb collisions are shown in Fig.~\ref{fig:ppSpect} and \ref{fig:pPbSpect}, respectively.
-All hadron densities are observed to become harder with increasing $\pT$ within events that require at least one charged particle jet with $\pTjch > 10$~\GeVc.
-Also, as expected, the particle $\pT$-differential density in jet is harder than that in underlying events.
-
 \begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[width=.48\textwidth]{cf04_1}
-		\includegraphics[width=.48\textwidth]{cf04_2}
-		\includegraphics[width=.48\textwidth]{cf04_3}
-		\includegraphics[width=.48\textwidth]{cf04_4}
+		\includegraphics[width=.49\textwidth]{cf04_1}
+		\includegraphics[width=.49\textwidth]{cf04_2}
+		\includegraphics[width=.49\textwidth]{cf04_3}
+		\includegraphics[width=.49\textwidth]{cf04_4}
 	\end{center}
 	\caption{$\pT$-differential density of $\kzero$, $\lmb + \almb$, $\X + \Ix$ and $\Om + \Mo$ in \pp collisions at \thirteen. The black points represent particles from minimum bias events, the green points represent particles from the jet cones, the blue points represent particles within a cone perpendicular to the jet, associated with the underlying event and the red points represent the particle from the jet fragmentation.}
 	\label{fig:ppSpect}
 \end{figure}
 \begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[width=.48\textwidth]{cf05_1}
-		\includegraphics[width=.48\textwidth]{cf05_2}
-		\includegraphics[width=.48\textwidth]{cf05_3}
-		\includegraphics[width=.48\textwidth]{cf05_4}
+		\includegraphics[width=.49\textwidth]{cf05_1}
+		\includegraphics[width=.49\textwidth]{cf05_2}
+		\includegraphics[width=.49\textwidth]{cf05_3}
+		\includegraphics[width=.49\textwidth]{cf05_4}
 	\end{center}
 	\caption{$\pT$-differential density of $\kzero$, $\lmb + \almb$, $\X + \Ix$ and $\Om + \Mo$ in 0-100\% in \pPb at \fivenn. The black points represent particles from minimum bias events, the green points represent particles from the jet cones, the blue points represent particles within a cone perpendicular to the jet, associated with the underlying event and the red points represent the particle from the jet fragmentation.}
 	\label{fig:pPbSpect}
 \end{figure}
 
-The $\pT$ distributions of $\kzero$, $\lmb + \almb$ and $\X + \Ix$ for different charged-particle multiplicity bins are show in Fig.~\ref{fig:pPbSpectwCent}.
-The inclusive distributions become harder with increasing charged-particle multiplicity.
-Particles in JE, which are generated by jet fragmentation, do not depend on the charged-particle multiplicity.
+The fully corrected $\pT$-differential densities ($\dd \rho/ \dd \pT$ defined by Eq.~\ref{eq:normalize}), for \kzero, $\lmb + \almb$, $\X + \Ix$ and $\Om + \Mo$, in \pp and MB \pPb collisions are shown in Fig.~\ref{fig:ppSpect} and \ref{fig:pPbSpect}, respectively.
+The $\pT$-differential particle density (d$\rho$/d$\pT$) within charged-particle jets is compared with that of inclusive particles and with perpendicular cone particles.
+As expected the $\pT$ dependence of the density of those hadrons within jets,as defined in Eq.~\ref{eq:je}, is considerably less steep than in the case of inclusive particles.
+The $\pT$-differential density distribution of inclusive hadrons is lower than that of the PC selection since the latter are obtained from events contain jets with $\pTjch > 10$~\GeVc.
+At the high-$\pT$ ($\pT > 4$~\GeVc) region, the density of particle within charged-particle jets is consistent with the one in jet cone (without the underlying event subtraction).
+This is consistent with the expectation that the high-$\pT$ particles originate from jet fragmentation. 
+
+In the previous studies of ALICE experiment~\cite{ALICE:2015mpp, ALICE:2016dei, ALICE:2013wgn}, the stronger multiplicity dependence of the inclusive $\pT$-differential spectra shapes of heavier particles is observed.
+It also a important evidence for the baryon-to-meson ratio enhancement at intermediate-$\pT$.
+The $\pT$-differential densities distributions of $\kzero$, $\lmb + \almb$, $\X + \Ix$ and $\Om + \Mo$ particles within jet are shown in Fig.~\ref{fig:pPbSpectwCent} for different charged-particle multiplicity bins.
+The bottom panels depict the ratio to the minimum bias (0-100\%) $\pT$ distribution.
+For the $\Om + \Mo$ in jet density, only the minimum bias distribution is shown.
+These spectra are compared to the particles with PYTHIA 8 simulation with Monash tune.
+The PYTHIA 8 can describe the $\kzero$ and $\lmb + \almb$ well, but not for the $\X + \Ix$ and $\Om + \Mo$.
+In Fig.~\ref{fig:pPbSpectwCent}, the $\kzero$, $\lmb + \almb$ and $\X + \Ix$  particle $\pT$ spectra do not show any dependent on the charged-particle multiplicity which observed in that of inclusive particles~\cite{ALICE:2015mpp, ALICE:2016dei, ALICE:2013wgn}. 
+Then the particle associated with jet fragmentation process may not contribute on the baryon-to-meson ratio enhancement in high multiplicity INEL events with respect to that in lower multiplicity events in small collision systems.
+
 \begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[width=.32\textwidth]{cf06_1}
-		\includegraphics[width=.32\textwidth]{cf06_2}
-		\includegraphics[width=.32\textwidth]{cf06_3}
-		\includegraphics[width=.32\textwidth]{cf06_4}
-		\includegraphics[width=.32\textwidth]{cf06_5}
-		\includegraphics[width=.32\textwidth]{cf06_6}
+		%\includegraphics[width=.32\textwidth]{cf06_1}
+		%\includegraphics[width=.32\textwidth]{cf06_2}
+		%\includegraphics[width=.32\textwidth]{cf06_3}
+		\includegraphics[width=.49\textwidth]{cf06_4}
+		\includegraphics[width=.49\textwidth]{cf06_5}
+		\includegraphics[width=.49\textwidth]{cf06_6}
+		\includegraphics[width=.49\textwidth]{cf06_7}
 	\end{center}
-	\caption{$\pT$-differential density of $\kzero$, $\lmb + \almb$ and $\X + \Ix$ in different V0A event multiplicity classes in \pPb collisions at \fivenn. Top panels show the inclusive particle and bottom panels show particles generated by jet fragmentation. The different centrality classes are depicted with different color.}
+	\caption{$\pT$-differential density of $\kzero$, $\lmb + \almb$, $\X + \Ix$ and $\Om + \Mo$ (0-100\% only) particles within jets in different V0A event multiplicity classes in \pPb collisions at \fivenn. The different centrality classes are depicted with different color. In the bottom panels ratios of multiplicity dependent spectra to minimum bias are shown. The systematic uncertainties on the ratios are obtained by considering only contributions uncorrelated across multiplicity.
+	The solid curves represent PYTHIA 8 simulations to the measured spectra.
+	}
 	\label{fig:pPbSpectwCent}
 \end{figure}
 
@@ -544,26 +557,26 @@ This suggests that the ratios of baryon-to-meson and baryon-to-baryon enhancemen
 
 \begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[width=.3\textwidth]{cf07_1}
-		\includegraphics[width=.3\textwidth]{cf07_2}
-		\includegraphics[width=.3\textwidth]{cf07_3}
-		\includegraphics[width=.3\textwidth]{cf07_4}
-		\includegraphics[width=.3\textwidth]{cf07_5}
-		\includegraphics[width=.3\textwidth]{cf07_6}
+		\includegraphics[width=.49\textwidth]{cf07_1}
+		\includegraphics[width=.49\textwidth]{cf07_4}
+		\includegraphics[width=.49\textwidth]{cf07_2}
+		\includegraphics[width=.49\textwidth]{cf07_5}
+		\includegraphics[width=.49\textwidth]{cf07_3}
+		\includegraphics[width=.49\textwidth]{cf07_6}
 	\end{center}
-	\caption{The baryon-to-meson (top) and baryon-to-baryon (bottom) ratio as a function of particle $\pT$ in \pp collisions at \thirteen. The black points correspond to the ratio with particles from minimum bias events, the green points correspond to the ratio with particles from the jet cones, the blue points correspond to the ratio with particles within a cone perpendicular to the jet, associated with the underlying event and the red points represent the ratio from the jet fragmentation.}
+	\caption{The baryon-to-meson (left) and baryon-to-baryon (right) ratio as a function of particle $\pT$ in \pp collisions at \thirteen. The black points correspond to the ratio with particles from minimum bias events, the green points correspond to the ratio with particles from the jet cones, the blue points correspond to the ratio with particles within a cone perpendicular to the jet, associated with the underlying event and the red points represent the ratio from the jet fragmentation.}
 	\label{fig:ppRatio}
 \end{figure}
 \begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[width=.3\textwidth]{cf08_1}
-		\includegraphics[width=.3\textwidth]{cf08_2}
-		\includegraphics[width=.3\textwidth]{cf08_3}
-		\includegraphics[width=.3\textwidth]{cf08_4}
-		\includegraphics[width=.3\textwidth]{cf08_5}
-		\includegraphics[width=.3\textwidth]{cf08_6}
+		\includegraphics[width=.49\textwidth]{cf08_1}
+		\includegraphics[width=.49\textwidth]{cf08_4}
+		\includegraphics[width=.49\textwidth]{cf08_2}
+		\includegraphics[width=.49\textwidth]{cf08_5}
+		\includegraphics[width=.49\textwidth]{cf08_3}
+		\includegraphics[width=.49\textwidth]{cf08_6}
 	\end{center}
-	\caption{The baryon-to-meson (top) and baryon-to-baryon (bottom) ratio as a function of particle $\pT$ in \pPb collisions at \fivenn. The black points correspond to the ratio with particles from minimum bias events, the green points correspond to the ratio with particles from the jet cones, the blue points correspond to the ratio with particles ratio within a cone perpendicular to the jet, associated with the underlying event and the red points represent the ratio from the jet fragmentation.}
+	\caption{The baryon-to-meson (left) and baryon-to-baryon (right) ratio as a function of particle $\pT$ in \pPb collisions at \fivenn. The black points correspond to the ratio with particles from minimum bias events, the green points correspond to the ratio with particles from the jet cones, the blue points correspond to the ratio with particles ratio within a cone perpendicular to the jet, associated with the underlying event and the red points represent the ratio from the jet fragmentation.}
 	\label{fig:pPbRatio}
 \end{figure}
 
@@ -574,33 +587,33 @@ For $\pT > 5$~\GeVc, the baryon-to-meson ratios become \emp{fairly consistent} f
 
 \begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[width=.3\textwidth]{cf09_1}
-		\includegraphics[width=.3\textwidth]{cf09_2}
-		\includegraphics[width=.3\textwidth]{cf09_3}
-		\includegraphics[width=.3\textwidth]{cf09_4}
-		\includegraphics[width=.3\textwidth]{cf09_5}
-		\includegraphics[width=.3\textwidth]{cf09_6}
+		\includegraphics[width=.49\textwidth]{cf09_1}
+		\includegraphics[width=.49\textwidth]{cf09_4}
+		\includegraphics[width=.49\textwidth]{cf09_2}
+		\includegraphics[width=.49\textwidth]{cf09_5}
+		\includegraphics[width=.49\textwidth]{cf09_3}
+		\includegraphics[width=.49\textwidth]{cf09_6}
 	\end{center}
-	\caption{The baryon-to-meson (top) and baryon-to-baryon (bottom) ratio as a function of particle $\pT$ in jets in \pp (open symbols) and \pPb (full symbols). The different centrality classes for \pPb collisions are depicted with different color.}
+	\caption{The baryon-to-meson (left) and baryon-to-baryon (right) ratio as a function of particle $\pT$ in jets in \pp (open symbols) and \pPb (full symbols). The different centrality classes for \pPb collisions are depicted with different color.}
 	\label{fig:pppPbRatio}
 \end{figure}
 
-\subsection{Comparison to models}
-\label{subsec:ComToMod}
+%\subsection{Comparison to models}
+%\label{subsec:ComToMod}
 
-need to be added.
+%need to be added.
 
-\begin{figure}[!ht]
-	\begin{center}
-		\includegraphics[width=.4\textwidth]{cf10_1}
-		\includegraphics[width=.4\textwidth]{cf10_2}
-		\includegraphics[width=.4\textwidth]{cf10_3}
-		\includegraphics[width=.4\textwidth]{cf10_4}
+%\begin{figure}[!ht]
+%	\begin{center}
+%		\includegraphics[width=.4\textwidth]{cf10_1}
+%		\includegraphics[width=.4\textwidth]{cf10_2}
+%		\includegraphics[width=.4\textwidth]{cf10_3}
+%		\includegraphics[width=.4\textwidth]{cf10_4}
 
-	\end{center}
-	\caption{Particles in jet in \pPb at \fivenn with PYTHIA 8 BLC mode 0}
-	\label{fig:pPbpyJESpect}
-\end{figure}
+%	\end{center}
+%	\caption{Particles in jet in \pPb at \fivenn with PYTHIA 8 BLC mode 0}
+%	\label{fig:pPbpyJESpect}
+%\end{figure}
 
 
 \clearpage
