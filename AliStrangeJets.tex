@@ -135,7 +135,7 @@ In \pPb collisions, the underlying background is larger and the reconstructed je
 \end{equation}
 where the $\pTj^{\rm rec}$ is the reconstructed jet $\pT$, $\Ajet$ is the jet area and $\rhobkg$ is the event-by-event background density~\cite{Cacciari:2007fd}.
 The $\Ajet$ is calculated using the FastJet algorithm with a ghost area of $0.005$~\cite{Cacciari:2008gn}.
-A method that is suitable for combinatorial jet background density estimation for sparse systems circumvents the problems arising from using the ghost jets is introduced in \cite{Chatrchyan:2012tt}.
+A method that is suitable for the background density estimation for sparse systems circumvents the problems arising from using the ghost jets is introduced in \cite{Chatrchyan:2012tt}.
 The basic idea is to neglect the ghosts and instead account for the empty areas by introducing a factor correcting the background density for it.
 It can be implemented by the following formula
 \begin{equation}
@@ -339,9 +339,13 @@ To estimate the effect of jet $\pT$ threshold uncertainty, the analysis is repea
 The systematic uncertainties of particles in jets are added to the list of uncertainties in quadrature.
 The values are shown in Table~\ref{tab:ppJEUncer}, \ref{tab:pPbJEUncer}.
 
+The uncertainties of jet cone particle ratios ($\lmb/\kzero$, $\Xi/\kzero$, $\Omega/\kzero$, $\Xi/\lmb$, $\Omega/\lmb$ and $\Omega/\Xi$) also include three sources: the particle reconstruction, UE subtraction and the jet $\pT$ threshold.
+The particle reconstruction uncertainty is propagated from the particle spectra.
+Uncertainties related to UE subtraction and jet $\pT$ threshold are obtained by varying the same condition as particle spectra in both numerator and denominator of the corresponding ratios.
+
 \begin{table}[!ht]
 	\begin{center}
-		\caption{Main sources and values of the relative systematic uncertainties (\%) of $\kzero$, $\lmb + \almb$, $\X + \Ix$ and $\Om + \Mo$ in JE in \pp collisions at \thirteen.
+		\caption{Main sources and values of the relative systematic uncertainties (\%) of particle $\pT$-differential density ($\kzero$, $\lmb + \almb$, $\X + \Ix$ and $\Om + \Mo$) and particle ratios ($\lmb/\kzero$, $\Xi/\kzero$, $\Omega/\kzero$, $\Xi/\lmb$, $\Omega/\lmb$ and $\Omega/\Xi$) in JE in \pp collisions at \thirteen.
 			The values are reported for low, intermediate and high $\pT$.}
 		\label{tab:ppJEUncer}
 		\begin{tabularx}{\textwidth}{@{} lCCCCCCCCCCCC @{}}
@@ -360,12 +364,42 @@ The values are shown in Table~\ref{tab:ppJEUncer}, \ref{tab:pPbJEUncer}.
 			\textbf{Total uncertainty}& 1.8& 3.1& 10.9& 5.3& 1.2& 9.9& 7.7& 2.6& 5& 7.1& 2.5& 0.6 \\
 			\bottomrule
 		\end{tabularx}
+	    \begin{tabularx}{\textwidth}{@{} lCCCCCCCCC @{}}
+	    	\toprule
+	    	\textbf{Uncertainty source} & \multicolumn{3}{c}{\textbf{$(\lmb + \almb)/(2\kzero)$}}
+	    	& \multicolumn{3}{c}{\textbf{$(\X + \Ix)/(2\kzero)$}}
+	    	& \multicolumn{3}{c}{\textbf{$(\Om + \Mo)/(2\kzero)$}} \\
+	    	\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
+	    	$\pT$ (\GeVc) & 0.6 & 2 &10  & 0.6 & 2 & 7 & 1 & 2 & 5 \\
+	    	\midrule
+	    	Particle reconstruction& 2.4& 2.8& 2.5& 3.4& 2.8& 2.8& 6.7& 11.4& 7.3\\
+	    	UE subtraction& 0.8& 0.2& 0.4& 3.5& 0.2& 0.1& 10& 4& 2.2\\
+	    	Jet $\pT$ threshold& 0.4& 2.3& 1& 1.7& 1.6& 3.6& 1.& 3.3& 6.4\\
+	    	\midrule
+	    	\textbf{Total uncertainty}& 2.6& 3.7& 2.7& 5.2& 3.3& 4.5& 12.4& 12.5& 10\\
+	    	\bottomrule
+	    \end{tabularx}
+		\begin{tabularx}{\textwidth}{@{} lCCCCCCCCC @{}}
+			\toprule
+			\textbf{Uncertainty source} & \multicolumn{3}{c}{\textbf{$(\X + \Ix)/(\lmb + \almb)$}}
+			& \multicolumn{3}{c}{\textbf{$(\Om + \Mo)/(\lmb + \almb)$}}
+			& \multicolumn{3}{c}{\textbf{$(\Om + \Mo)/(\X + \Ix)$}} \\
+			\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
+			$\pT$ (\GeVc) & 0.6 & 2 &7  & 1 & 2 & 5 & 1 & 2 & 5 \\
+			\midrule
+			Particle reconstruction& 3.4& 3& 3.2& 6.7& 11.5& 7.5& 6.8& 11.5& 7.4\\
+			UE subtraction& 4.4& 0.4& 0.2& 12.4& 4.2& 2.3& 7.8& 3.8& 2.7\\
+		    Jet $\pT$ threshold& 0.7& 0.5& 1.9& 0.2& 0.9& 3.5& 0.4& 1.3& 3\\
+		    \midrule
+		    \textbf{Total uncertainty}& 5.6& 3& 3.7& 14.1& 12.2& 8.6& 10.3& 12.1& 8.5\\
+	 	    \bottomrule
+	  \end{tabularx}
 	\end{center}
 \end{table}
 
 \begin{table}[!ht]
 	\begin{center}
-		\caption{Main sources and values of the relative systematic uncertainties (\%) of $\kzero$, $\lmb + \almb$, $\X + \Ix$ and $\Om + \Mo$ in JE in \pPb collisions at \fivenn.
+		\caption{Main sources and values of the relative systematic uncertainties (\%) of particle $\pT$-differential density ($\kzero$, $\lmb + \almb$, $\X + \Ix$ and $\Om + \Mo$) and particle ratios ($\lmb/\kzero$, $\Xi/\kzero$, $\Omega/\kzero$, $\Xi/\lmb$, $\Omega/\lmb$ and $\Omega/\Xi$) in JE in \pPb collisions at \fivenn.
 			The values are reported for low, intermediate and high $\pT$.}
 		\label{tab:pPbJEUncer}
 		\begin{tabularx}{\textwidth}{@{} lCCCCCCCCCCCC @{}}
@@ -384,103 +418,40 @@ The values are shown in Table~\ref{tab:ppJEUncer}, \ref{tab:pPbJEUncer}.
 			\textbf{Total uncertainty}& 5& 3.6& 11& 13.5& 2.3& 11.2& 37.9& 4.2& 4.1& 9.3& 11.3& 7.7 \\
 			\bottomrule
 		\end{tabularx}
+		\begin{tabularx}{\textwidth}{@{} lCCCCCCCCC @{}}
+		    \toprule
+		    \textbf{Uncertainty source} & \multicolumn{3}{c}{\textbf{$(\lmb + \almb)/(2\kzero)$}}
+		    & \multicolumn{3}{c}{\textbf{$(\X + \Ix)/(2\kzero)$}}
+		    & \multicolumn{3}{c}{\textbf{$(\Om + \Mo)/(2\kzero)$}} \\
+	  	    \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
+		    $\pT$ (\GeVc) & 0.6 & 2 &10  & 0.6 & 2 & 7 & 1 & 2 & 5 \\
+		    \midrule
+		    Particle reconstruction& 3.2& 3.4& 3.3& 4.7& 3.2& 4& 9.8& 1.5& 7.4\\
+	 	    UE subtraction& 0.8& 0.1& 0.1& 9.1& 1.8& 1& 4.1& 0& 0.3\\
+		    Jet $\pT$ threshold& 1.4& 2.6& 0.1& 8.6& 2.4& 6& 0.5& 1.5& 0.3\\
+		    \midrule
+		    \textbf{Total uncertainty}& 3.6& 4.3& 3.3& 13.4& 4.4& 7.2& 10.6& 15.1& 7.4\\
+		    \bottomrule
+	        \end{tabularx}
+	        \begin{tabularx}{\textwidth}{@{} lCCCCCCCCC @{}}
+		    \toprule
+		    \textbf{Uncertainty source} & \multicolumn{3}{c}{\textbf{$(\X + \Ix)/(\lmb + \almb)$}}
+		    & \multicolumn{3}{c}{\textbf{$(\Om + \Mo)/(\lmb + \almb)$}}
+		    & \multicolumn{3}{c}{\textbf{$(\Om + \Mo)/(\X + \Ix)$}} \\
+		    \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
+		    $\pT$ (\GeVc) & 0.6 & 2 &10  & 0.6 & 2 & 7 & 1 & 2 & 5 \\
+		    \midrule
+		    Particle reconstruction& 4.1& 2.8& 3.7& 9.6& 15& 7.5& 10& 14.9& 8.6\\
+		    UE subtraction& 9.9& 1.9& 0.8& 3.6& 0.1& 0.3& 11& 1.8& 0.1\\
+		    Jet $\pT$ threshold& 2.7& 0.6& 2.6& 0.4& 5& 3& 0.4& 3.8& 1.7\\
+		    \midrule
+		    \textbf{Total uncertainty}& 11.1& 3.4& 4.6& 10.3& 15.8& 8.1& 14.9& 15.5& 8.7\\
+		    \bottomrule
+	\end{tabularx}
 	\end{center}
 \end{table}
 
-The uncertainties of jet cone particle ratios ($\lmb/\kzero$, $\Xi/\kzero$, $\Omega/\kzero$, $\Xi/\lmb$, $\Omega/\lmb$ and $\Omega/\Xi$) also include three sources: the particle reconstruction, UE subtraction and the jet $\pT$ threshold.
-The particle reconstruction uncertainty is propagated from the particle spectra.
-Uncertainties related to UE subtraction and jet $\pT$ threshold are obtained by varying the same condition as particle spectra in both numerator and denominator of the corresponding ratios.
-
-\begin{table}[!ht]
-	\begin{center}
-		\caption{Main sources and values of the relative systematic uncertainties (\%) of baryon-to-meson ratios ($\lmb/\kzero$, $\Xi/\kzero$, $\Omega/\kzero$) in JE in \pp collisions at \thirteen.
-			The values are reported for low, intermediate and high $\pT$.}
-		\label{tab:ppBMRatioUncer}
-		\begin{tabularx}{\textwidth}{@{} lCCCCCCCCC @{}}
-			\toprule
-			\textbf{Uncertainty source} & \multicolumn{3}{c}{\textbf{$(\lmb + \almb)/(2\kzero)$}}
-			& \multicolumn{3}{c}{\textbf{$(\X + \Ix)/(2\kzero)$}}
-			& \multicolumn{3}{c}{\textbf{$(\Om + \Mo)/(2\kzero)$}} \\
-			\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
-			$\pT$ (\GeVc) & 0.6 & 2 &10  & 0.6 & 2 & 7 & 1 & 2 & 5 \\
-			\midrule
-			Particle reconstruction& 2.4& 2.8& 2.5& 3.4& 2.8& 2.8& 6.7& 11.4& 7.3\\
-			UE subtraction& 0.8& 0.2& 0.4& 3.5& 0.2& 0.1& 10& 4& 2.2\\
-			Jet $\pT$ threshold& 0.4& 2.3& 1& 1.7& 1.6& 3.6& 1.& 3.3& 6.4\\
-			\midrule
-			\textbf{Total uncertainty}& 2.6& 3.7& 2.7& 5.2& 3.3& 4.5& 12.4& 12.5& 10\\
-			\bottomrule
-		\end{tabularx}
-	\end{center}
-\end{table}
-
-\begin{table}[!ht]
-	\begin{center}
-		\caption{Main sources and values of the relative systematic uncertainties (\%) of baryon-to-baryon ratios ($\Xi/\lmb$, $\Omega/\lmb$, $\Omega/\Xi$) in JE in \pp collisions at \thirteen.
-			The values are reported for low, intermediate and high $\pT$.}
-		\label{tab:ppBBRatioUncer}
-		\begin{tabularx}{\textwidth}{@{} lCCCCCCCCC @{}}
-			\toprule
-			\textbf{Uncertainty source} & \multicolumn{3}{c}{\textbf{$(\X + \Ix)/(\lmb + \almb)$}}
-			& \multicolumn{3}{c}{\textbf{$(\Om + \Mo)/(\lmb + \almb)$}}
-			& \multicolumn{3}{c}{\textbf{$(\Om + \Mo)/(\X + \Ix)$}} \\
-			\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
-			$\pT$ (\GeVc) & 0.6 & 2 &7  & 1 & 2 & 5 & 1 & 2 & 5 \\
-			\midrule
-			Particle reconstruction& 3.4& 3& 3.2& 6.7& 11.5& 7.5& 6.8& 11.5& 7.4\\
-			UE subtraction& 4.4& 0.4& 0.2& 12.4& 4.2& 2.3& 7.8& 3.8& 2.7\\
-			Jet $\pT$ threshold& 0.7& 0.5& 1.9& 0.2& 0.9& 3.5& 0.4& 1.3& 3\\
-			\midrule
-			\textbf{Total uncertainty}& 5.6& 3& 3.7& 14.1& 12.2& 8.6& 10.3& 12.1& 8.5\\
-			\bottomrule
-		\end{tabularx}
-	\end{center}
-\end{table}
-
-\begin{table}[!ht]
-	\begin{center}
-		\caption{Main sources and values of the relative systematic uncertainties (\%) of baryon-to-meson ratios ($\lmb/\kzero$, $\Xi/\kzero$, $\Omega/\kzero$) in JE in \pPb collisions at \fivenn.
-			The values are reported for low, intermediate and high $\pT$.}
-		\label{tab:pPbBMRatioUncer}
-		\begin{tabularx}{\textwidth}{@{} lCCCCCCCCC @{}}
-			\toprule
-			\textbf{Uncertainty source} & \multicolumn{3}{c}{\textbf{$(\lmb + \almb)/(2\kzero)$}}
-			& \multicolumn{3}{c}{\textbf{$(\X + \Ix)/(2\kzero)$}}
-			& \multicolumn{3}{c}{\textbf{$(\Om + \Mo)/(2\kzero)$}} \\
-			\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
-			$\pT$ (\GeVc) & 0.6 & 2 &10  & 0.6 & 2 & 7 & 1 & 2 & 5 \\
-			\midrule
-			Particle reconstruction& 3.2& 3.4& 3.3& 4.7& 3.2& 4& 9.8& 1.5& 7.4\\
-			UE subtraction& 0.8& 0.1& 0.1& 9.1& 1.8& 1& 4.1& 0& 0.3\\
-			Jet $\pT$ threshold& 1.4& 2.6& 0.1& 8.6& 2.4& 6& 0.5& 1.5& 0.3\\
-			\midrule
-			\textbf{Total uncertainty}& 3.6& 4.3& 3.3& 13.4& 4.4& 7.2& 10.6& 15.1& 7.4\\
-			\bottomrule
-		\end{tabularx}
-	\end{center}
-\end{table}
-\begin{table}[!ht]
-	\begin{center}
-		\caption{Main sources and values of the relative systematic uncertainties (\%) of baryon-to-baryon ratios ($\Xi/\lmb$, $\Omega/\lmb$, $\Omega/\Xi$) in JE in \pPb collisions at \fivenn.
-			The values are reported for low, intermediate and high $\pT$.}
-		\label{tab:pPbBBRatioUncer}
-		\begin{tabularx}{\textwidth}{@{} lCCCCCCCCC @{}}
-			\toprule
-			\textbf{Uncertainty source} & \multicolumn{3}{c}{\textbf{$(\X + \Ix)/(\lmb + \almb)$}}
-			& \multicolumn{3}{c}{\textbf{$(\Om + \Mo)/(\lmb + \almb)$}}
-			& \multicolumn{3}{c}{\textbf{$(\Om + \Mo)/(\X + \Ix)$}} \\
-			\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
-			$\pT$ (\GeVc) & 0.6 & 2 &10  & 0.6 & 2 & 7 & 1 & 2 & 5 \\
-			\midrule
-			Particle reconstruction& 4.1& 2.8& 3.7& 9.6& 15& 7.5& 10& 14.9& 8.6\\
-			UE subtraction& 9.9& 1.9& 0.8& 3.6& 0.1& 0.3& 11& 1.8& 0.1\\
-			Jet $\pT$ threshold& 2.7& 0.6& 2.6& 0.4& 5& 3& 0.4& 3.8& 1.7\\
-			\midrule
-			\textbf{Total uncertainty}& 11.1& 3.4& 4.6& 10.3& 15.8& 8.1& 14.9& 15.5& 8.7\\
-			\bottomrule
-		\end{tabularx}
-	\end{center}
-\end{table}
+\clearpage
 
 \section{Results and discussion}%
 \label{sec:Results}
@@ -625,7 +596,8 @@ In the Fig~\ref{fig:pppPbRatio}, these ratios are compared to the PYTHIA 8 simul
 \label{sec:Summary}
 
 The first measurement of the \kzero, \lmb (\almb), \Xis and \Oms $\pT$-differential density, the $\lmb/\kzero$, $\Xi/\kzero$ and $\Omega/\kzero$ baryon-to-meson ratio and the $\Xi/\lmb$, $\Omega/\lmb$ and $\Omega/\Xi$ baryon-to-baryon ratio in charged-particle jets and underlying events in \pp collisions at \thirteen and \pPb collisions at \fivenn have been studied.
-The results are compared with those obtained in PYTHIA simulations.
+All the measured quantities are compared with PYTHIA 8 model predictions.
+The PYTHIA 8 with the standard Monash trigg tune can describe the $\kzero, \lmb + \almb$, but not for the $\X + \Ix$ and $\Om + \Mo$.
 The main aim of the presented analysis, based on charged-particle jet to separate hard and soft process, is to provide insight into the understanding of the origin of flow-like correlations observed in small systems.
 
 For all particle the $\pT$-differential density in events with charged-particle jet ($\pTjch$ > 10~\GeVc) are observed to be harder than that in MB events.
